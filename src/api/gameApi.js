@@ -2,7 +2,7 @@ import axios from "axios";
 
 axios.defaults.withCredentials = true;
 
-const BASE_URL_LOCAL = 'http://localhost:3000/game'
+const BASE_URL_LOCAL = import.meta.env.VITE_BJ_API_URL;
 
 const gameEndpoints = {
         startGame : () => axios.get(`${BASE_URL_LOCAL}/start`, {

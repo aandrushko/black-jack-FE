@@ -64,10 +64,16 @@ const Controls = ({ dealerOpened, gameIsFinished, tableId, updateGameState }) =>
             console.log(e);
         }
     }
+    const handleRedirectToLobby = () => {
+        setLocation('/');
+    }
 
     if ( gameIsFinished ) {
         return (
-            <Button variant='outlined' sx={styles.actionButton} onClick={() => handleStartNewGame()}> Start new game </Button>
+            <Box sx={{ display: 'flex', gap: '20px'}}>
+                <Button variant='outlined' sx={styles.actionButton} onClick={() => handleStartNewGame()}> Start new game </Button>
+                <Button variant='outlined' sx={styles.actionButton} onClick={handleRedirectToLobby}> Go to Lobby </Button>
+            </Box>
         )
     }
     if ( !dealerOpened ) {

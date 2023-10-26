@@ -2,10 +2,11 @@ import {Box} from "@mui/material";
 import {useEffect, useState} from "react";
 import gameEndpoints from "../../api/gameApi.js";
 import { useParams } from "wouter";
-import Card from "../../components/Card.js";
+import Card from "../../components/Card";
 import Controls from "./components/Controls.js";
 import ScoreBubble from "./components/ScoreBubble.js";
-import GameSummary from "./components/GameSummary.js";
+import DeclareWinnerBanner from "./components/DeclareWinnerBanner.js";
+import GameInsights from "./components/GameInsights.js";
 
 const styles = {
     tableContainer: {
@@ -39,16 +40,12 @@ const styles = {
 const Table = () => {
     const { tableId} = useParams();
     const [gameState, setGameState] = useState({});
-    const [isLoading, setIsLoading] = useState(false);
     const getGameState = async (tableId) => {
-        setIsLoading(true);
         try {
             const { data } = await gameEndpoints.getGameDetails(tableId);
             await setGameState(data)
         } catch (e) {
             console.log(e);
-        } finally {
-            setIsLoading(false);
         }
     }
 
@@ -72,7 +69,7 @@ const Table = () => {
             </Box>
 
             {gameState?.gameStatus?.isFinished && (
-               <GameSummary gameState={gameState} />
+               <DeclareWinnerBanner gameState={gameState} />
             )}
 
             <Box sx={styles.playerCardsContainer}>
@@ -87,6 +84,10 @@ const Table = () => {
                 tableId={tableId}
                 updateGameState={getGameState}
             />
+            {gameState?.gameStatus?.isFinished && (
+                <GameInsights game={gameState}/>
+            )}
+
         </Box>
     )
 }

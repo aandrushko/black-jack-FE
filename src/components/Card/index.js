@@ -1,10 +1,7 @@
 import {Box, Paper, Typography} from "@mui/material";
-import ClubsIcon from "../assets/card_types/clubs.svg";
-import DiamondsIcon from "../assets/card_types/diamonds.svg";
-import Hearts from "../assets/card_types/hearts.svg";
-import Spades from "../assets/card_types/spades.svg";
-import cardBackBg from '../assets/card_back.webp'
+import cardBackBg from '../../assets/card_back.webp';
 import PropTypes from "prop-types";
+import {getColorForSuit, getSuitIcon, renderCardName} from "./service.js";
 
 
 const styles = {
@@ -25,25 +22,6 @@ const styles = {
         lineHeight: 1,
     }
 };
-
-const getColorForSuit = (suit) => {
-    if (suit === 'Diamonds' || suit === 'Hearts') return 'red'
-    return 'black';
-}
-const getSuitIcon = (suit) => {
-    switch (suit) {
-        case 'Spades':
-            return Spades;
-        case 'Clubs':
-            return ClubsIcon;
-        case 'Diamonds':
-            return DiamondsIcon;
-        case 'Hearts':
-            return Hearts;
-        default:
-            return null;
-    }
-}
 const Card = ({ hiddenCard = false, name = '', type = ''}) => {
     if (hiddenCard) {
         return (
@@ -62,7 +40,7 @@ const Card = ({ hiddenCard = false, name = '', type = ''}) => {
                 alignSelf: 'flex-start',
 
             }}>
-                {isNaN(Number(name)) ? name[0]: name}
+                {renderCardName(name)}
             </Typography>
             <Box
                 component='img'
@@ -74,7 +52,7 @@ const Card = ({ hiddenCard = false, name = '', type = ''}) => {
                 color: getColorForSuit(type),
                 alignSelf: 'flex-end',
             }}>
-                {isNaN(Number(name)) ? name[0]: name}
+                {renderCardName(name)}
             </Typography>
         </Paper>
     )

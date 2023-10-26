@@ -20,7 +20,7 @@ import PropTypes from "prop-types";
         fontWeight: '600',
      }
  }
-const GameSummary = ({ gameState }) => {
+const DeclareWinnerBanner = ({ gameState }) => {
     const { gameStatus } = gameState;
     const summaryTitle = gameStatus.isPlayerWin? 'Congrats! You win!' : 'You lose. Better luck next time!';
     return (
@@ -32,7 +32,7 @@ const GameSummary = ({ gameState }) => {
     )
 };
 
-GameSummary.propTypes = {
+DeclareWinnerBanner.propTypes = {
     gameState: PropTypes.object.isRequired,
 };
-export default GameSummary;
+export default DeclareWinnerBanner;
