@@ -13,7 +13,10 @@
 
 **5. Ignite the Front-End (FE):** It's time to fire up the Front-End and start playing Black Jack. 
   Open another terminal window, navigate back to your project folder: `cd black-jack-FE`
-  Now, using the power of Vite, launch your Front-End locally: `vite`
+  Now, using the power of Vite, launch your Front-End locally: `npm run start`
+
+The app should start at port 3000. If it doesn't, check your terminal for the correct port number.
+Also good to know that app uses BE server which should be started before FE. At specific port (port: 5173)
 
 Your Black Jack Front-End is now live, and you can start playing your favorite card game.
 

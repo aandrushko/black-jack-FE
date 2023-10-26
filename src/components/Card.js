@@ -79,7 +79,7 @@ const Card = ({ hiddenCard = false, name = '', type = ''}) => {
         </Paper>
     )
 }
-Card.protoTypes = {
+Card.propTypes = {
     hiddenCard: PropTypes.bool,
     name: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,

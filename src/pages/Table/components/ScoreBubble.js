@@ -8,6 +8,8 @@ const styles = {
         padding: '10px',
         fontSize: '30px',
         borderRadius: '9px',
+        minWidth: '200px',
+        textAlign: 'center',
     },
     textStyle: (isOver21) => ({
         fontSize: '24px',
@@ -30,5 +32,6 @@ const ScoreBubble = ({ hand = [], title = {} , isDealer = false} ) => {
 ScoreBubble.propTypes = {
     hand: PropTypes.array.isRequired,
     title: PropTypes.string.isRequired,
+    isDealer: PropTypes.bool.isRequired,
 };
 export default ScoreBubble;

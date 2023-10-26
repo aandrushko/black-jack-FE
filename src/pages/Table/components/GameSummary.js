@@ -22,7 +22,7 @@ import PropTypes from "prop-types";
  }
 const GameSummary = ({ gameState }) => {
     const { gameStatus } = gameState;
-    const summaryTitle = gameStatus.isPlayerWin? 'Congrats! You are winner' : 'You lose! Don\'t give up!';
+    const summaryTitle = gameStatus.isPlayerWin? 'Congrats! You win!' : 'You lose. Better luck next time!';
     return (
         <Box sx={styles.bubbleWrapper(gameStatus.isPlayerWin)}>
             <Typography sx={styles.textStyle}>

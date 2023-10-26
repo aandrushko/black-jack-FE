@@ -12,6 +12,20 @@ const styles = {
         flexDirection: 'column',
         gap:'50px'
     },
+    mainTitle: {
+        fontFamily: 'Satisfy',
+        color: '#FFF',
+        fontStyle:'cursive',
+        fontSize: '150px',
+        textAlign: 'center',
+    },
+    secondaryText:{
+        fontFamily: 'Satisfy',
+        color: '#FFF',
+        fontStyle:'cursive',
+        fontSize: '50px',
+        textAlign: 'center',
+    },
     button: {
         color: '#FFF',
         border: '1px solid #FFF',
@@ -42,22 +56,9 @@ const Lobby = () => {
     }
     return (
             <Box
-                sx={{
-                    height: '100vh',
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexDirection: 'column',
-                    gap:'50px'
-                }}
+                sx={styles.rootWrapper}
             >
-                <Typography sx={{
-                    fontFamily: 'Satisfy',
-                    color: '#FFF',
-                    fontStyle:'cursive',
-                    fontSize: '150px',
-                    textAlign: 'center',
-                }}>
+                <Typography sx={styles.mainTitle}>
                     Black Jack
                 </Typography>
                 <Typography sx={{
