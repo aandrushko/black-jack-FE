@@ -1,4 +1,5 @@
-# React + Vite
+# Black Jack Game. (Vite/React/Wouter/Axios/MaterialUI/Vitest).
+![image](https://github.com/aandrushko/black-jack-FE/assets/30930100/76ee6945-17c2-4965-b223-9e7a5c1b251e)
 
 **1.** **Clone the Repository:** Begin your journey by cloning the Black Jack Front-End repository.
     Open your terminal and execute this command:`git clone https://github.com/aandrushko/black-jack-FE.git`              
