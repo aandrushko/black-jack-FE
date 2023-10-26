@@ -1,11 +1,5 @@
 # React + Vite
 
-clone repo 
-install dependencies with `npm install`
-start local server see the <a href ='https://github.com/aandrushko/black-jack-BE'>BE part here</a>
-start FE localy with `vite` in terminal
-
-
 **1.** **Clone the Repository:** Begin your journey by cloning the Black Jack Front-End repository.
     Open your terminal and execute this command:`git clone https://github.com/aandrushko/black-jack-FE.git`              
 
